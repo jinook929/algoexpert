@@ -8,6 +8,15 @@ class BinaryTree:
         self.left = None
         self.right = None
 
+    def insert_left(self, value):
+        self.left = BinaryTree(value)
+
+    def insert_right(self, value):
+        self.right = BinaryTree(value)
+
+    def print_tree(self):
+        print(self.value)
+
 case1 = {
   "tree": {
     "nodes": [
@@ -25,7 +34,33 @@ case1 = {
   }
 }
 
-print(case1["tree"]["root"])
+# print(case1["tree"]["nodes"])
+nodes = case1["tree"]["nodes"]
+root = case1["tree"]["root"]
+# rootNode = list(filter(lambda item: item["id"] == root, nodes))[0]
+# print((rootNode))
 
-root = list(filter(lambda item: item["id"] == case1["tree"]["root"], case1["tree"]["nodes"]))[0]
-print(root)
+def findNode(id):
+    return list(filter(lambda item: item["id"] == id, case1["tree"]["nodes"]))[0]
+# print(findNode("9"))
+
+# for node in case1["tree"]["nodes"]:
+#     if node["id"] == rootNode["id"]:
+#         root = BinaryTree(node["value"])
+#         # if root.left:
+#         #     root.insert_left(findNode(root.left))
+#         # if root.right:
+#         #     root.insert_right(findNode(root.right))
+# # root.print_tree()
+
+def createTree(root, nodes):
+    rootNode = list(filter(lambda node: node["id"] == root, nodes))[0]
+    trav = rootNode
+    # while not None:
+    while trav.left || trav.right:
+        if trav.left:
+
+
+    return rootNode
+
+print(createTree(root, nodes))
