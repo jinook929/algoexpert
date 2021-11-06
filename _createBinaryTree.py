@@ -26,6 +26,15 @@ class BinaryTree:
 
     def insert_right(self, node):
         self.right = node
+        
+    def printTree(self, node, depth = 0):
+        print("+---" * depth + str(node.value))
+        if node.left:
+            self.printTree(self, node.left, depth + 1)
+        if node.right:
+            self.printTree(self, node.right, depth + 1)
+        return
+        
 
 # def createBinaryTree(nodes, root):
 #     tmp = []
@@ -118,12 +127,12 @@ nodes = [
   ]
 root = "1"
 treeRoot = createBinaryTree(nodes, root)[0]
-print(treeRoot.value)
-print(treeRoot.right.value)
-print(treeRoot.right.left.value)
-print(treeRoot.right.left.left.value)
-print(treeRoot.right.left.left.right.value)
-print(treeRoot.right.left.left.right.left.value)
-print(treeRoot.right.left.left.right.left.left.value)
-print(treeRoot.right.left.left.right.right.value)
-print(treeRoot.right.left.left.right.right.right.value)
+# print(treeRoot.value)
+# print(treeRoot.right.value)
+# print(treeRoot.right.left.value)
+# print(treeRoot.right.left.left.value)
+# print(treeRoot.right.left.left.right.value)
+# print(treeRoot.right.left.left.right.left.value)
+# print(treeRoot.right.left.left.right.left.left.value)
+# print(treeRoot.right.left.left.right.right.value)
+# print(treeRoot.right.left.left.right.right.right.value)
